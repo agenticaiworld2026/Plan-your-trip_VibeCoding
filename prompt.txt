@@ -1,1 +1,22 @@
 I want to build an AI-powered itinerary planning app and I need you to plan out the product before writing any code. The idea: a user sets up a trip through a guided form (destination, number of days, interests picked from selectable chips or categories, pace, budget, travel style) and the app generates a full day-by-day itinerary shown as a kanban board, where each column is a day and each card is a stop the user can drag between days or reorder. It should calculate travel time between stops, show total travel and active time per day so overpacked days stand out, recommend an optimal order that minimizes backtracking and respects opening hours, and re-suggest the plan when a card gets moved. Users should be able to save trips and come back to them. Prefer structured input (dropdowns, multi-select chips, sliders, toggles) over a big text box, but leave room for an optional free-text field where users can add specifics. The UI is the priority and it has to feel extremely modern: clean generous spacing, a confident type scale, smooth drag physics with satisfying micro-interactions, subtle depth and motion rather than flat and static, a restrained sophisticated color palette, and a layout that feels effortless on both desktop and mobile. I want it to look like a premium 2026 product, not a template. Before you write code, give me a product spec covering the feature breakdown, user flows, data model, the UI design direction in detail, and a phased build plan with the MVP first.
+
+
+Optional env vars
+Copy .env.example to .env.local for:
+
+OPENAI_API_KEY — real AI itineraries
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY — live maps/places/routing
+Supabase vars + supabase/schema.sql for production Postgres/RLS
+Key structure
+Area	Path
+Wizard
+src/components/wizard/trip-wizard.tsx
+Kanban
+src/components/kanban/
+API routes
+src/app/api/trips/
+Design tokens
+src/app/globals.css
+DB (local)
+src/lib/db/store.ts
+Build passes (npm run build), and the full flow was smoke-tested: auth → create trip → generate 3-day Lisbon itinerary with stops.
