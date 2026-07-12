@@ -1,0 +1,16 @@
+{
+  "name": "Waypoint",
+  "short_name": "Waypoint",
+  "description": "AI-powered itinerary planner with kanban board",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F6F3",
+  "theme_color": "#2D6A5E",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
